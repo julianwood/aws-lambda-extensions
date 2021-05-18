@@ -37,31 +37,37 @@ In this repository you will find a number of demos and sample projects from AWS 
 
 * [Java 11 Extension](java-example-extension/): Sample: how to get a basic extension written in Java 11 up and running. 
 
-* *[C#.NET Extension](csharp-example-extension/): Sample: how to get a basic extension written in C# up and running.
+* [C#.NET Extension](csharp-example-extension/): Sample: how to get a basic extension written in C# up and running.
 
 
 
 ### Logs API demos and example extensions
 
-* [Go Logs API extension](go-example-logs-api-extension/): How to get a basic Logs API extension written in Go up and running.
+* [Go Logs API extension](go-example-logs-api-extension/): How to get a basic Logs API extension written in Go up and running. This extension demonstrates registering for the INVOKE and SHUTDOWN events using the Extensions API. It then runs a local HTTP listener and subscribes to a stream of function and platform logs using the Logs API. It buffers them and sends them to S3 periodically.
 
-* [Python Logs API extension](python-example-logs-api-extension/): How to get a basic Logs API extension written in Python 3 up and running. 
+* [Python Logs API extension](python-example-logs-api-extension/): How to get a basic Logs API extension written in Go up and running. This extension demonstrates registering for the INVOKE and SHUTDOWN events using the Extensions API. It then runs a local HTTP listener and subscribes to a stream of function and platform logs using the Logs API. It buffers them and sends them to S3 periodically.
 
-* [Python for Elasticsearch Logs API extension](python-example-elasticsearch-extension/): How to get a basic Logs API extension for Elasticsearch written in Python 3 up and running.
+* [Python for Elasticsearch Logs API extension](python-example-elasticsearch-extension/): How to get a basic Logs API extension for Elasticsearch written in Python 3 up and running. This extension demonstrates registering for the INVOKE and SHUTDOWN events using the Extensions API. It then runs a local HTTP listener and subscribes to a stream of function and platform logs using the Logs API. It buffers them and sends them to Elasticsearch periodically.
 
-* [Node.js Logs API extension](nodejs-example-logs-api-extension/): How to get a basic Logs API extension written in Node.js 12 up and running.
+* [Node.js Logs API extension](nodejs-example-logs-api-extension/): How to get a basic Logs API extension written in Go up and running. This extension demonstrates registering for the INVOKE and SHUTDOWN events using the Extensions API. It then runs a local HTTP listener and subscribes to a stream of function and platform logs using the Logs API. It buffers them and sends them to S3 periodically.
 
-* [Demo: Logs to Amazon S3 extension: zip archive](s3-logs-extension-demo-zip-archive/): Demo logs extension to receive logs directly from Lambda and send them to S3, see the blog post [Using AWS Lambda extensions to send logs to custom destinations](https://aws.amazon.com/blogs/compute/using-aws-lambda-extensions-to-send-logs-to-custom-destinations/)  
+* [Demo: Logs to Amazon S3 extension: zip archive](s3-logs-extension-demo-zip-archive/): Demo logs extension to receive logs directly from Lambda and send them to S3, see the blog post [Using AWS Lambda extensions to send logs to custom destinations](https://aws.amazon.com/blogs/compute/using-aws-lambda-extensions-to-send-logs-to-custom-destinations/). The demo is deployed using AWS SAM. 
 
-* [Demo: Logs to Amazon S3 extension: container image ](s3-logs-extension-demo-container-image/): Demo logs extension to receive logs directly from Lambda and send them to S3. This example packages the extension and function as separate container images.
+* [Demo: Logs to Amazon S3 extension: container image ](s3-logs-extension-demo-container-image/): Demo logs extension to receive logs directly from Lambda and send them to S3. This example packages the extension and function as separate container images. The demo is deployed using AWS SAM.
 
 ### Other extension examples
 
-* [Adaptive Batching extension in Go](go-example-adaptive-batching-extension/): How to use the Logs API extension written in Go to adaptively batch log data to a destination (S3).  
+* [Adaptive Batching extension in Go](go-example-adaptive-batching-extension/): How to use the Logs API extension written in Go to adaptively batch log data to a destination (S3). The logs are batched up and stored by the extension. Three environment variables with default values dictate when the logs are send to the destination. If any of the conditions are met, the logs queued will be shipped to S3.
+  - `ADAPTIVE_BATCHING_EXTENSION_SHIP_RATE_BYTES`:  Logs are shipped to S3 once log size reaches the number of bytes defined
+  - `ADAPTIVE_BATCHING_EXTENSION_SHIP_RATE_INVOKES`: Logs are shipped to S3 once the number of invokes reaches the number defined.
+  - `ADAPTIVE_BATCHING_EXTENSION_SHIP_RATE_MILLISECONDS`: Logs are shipped to S3 once the amount of time elapsed since the last time logs were shipped is exceeded.
 
-* [Inter-process communication extension in Go](go-example-ipc-extension/): A sample extension written in Go that acts as a companion process which the AWS Lambda function runtime can communicate with.
+* [Inter-process communication extension in Go](go-example-ipc-extension/): A sample extension written in Go that acts as a companion process. The AWS Lambda function can communicate with the extension. This sample extension:
 
-* [Crash uploader extension in Go](go-example-crash-uploader-extension/): A sample extension that looks for core dumps in the execution environment and uploads them to an Amazon S3 bucket for later inspection and troubleshooting.
+  - Writes to a file at `/tmp/test.txt` that the Lambda function can read.
+  - Starts a local HTTP server at the provided port (default 2772) that replies to requests with "Hello from http server"
+
+* [Crash uploader extension in Go](go-example-crash-uploader-extension/): A sample extension that looks for core dumps in the execution environment `/tmp` folder and uploads them to an Amazon S3 bucket for later inspection and troubleshooting.
 
 ### Wrapper script extension examples by language
 * [Bash Wrapper script](bash-example-wrapper/): How to to get a wrapper script written in Bash up and running.
