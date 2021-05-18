@@ -1,5 +1,5 @@
 # AWS Lambda Extensions
-[![AWS Lambda extensions](/img/LambdaExtensions.png)](https://aws.amazon.com/blogs/compute/introducing-aws-lambda-extensions-in-preview/)
+[![AWS Lambda extensions](/img/Extensions-LP-Header.png)](https://aws.amazon.com/blogs/compute/introducing-aws-lambda-extensions-in-preview/)
 
 AWS Lambda Extensions are a new way for tools to more easily integrate deeply into the Lambda execution environment to control and participate in Lambda’s lifecycle. 
 
