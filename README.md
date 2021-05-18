@@ -17,14 +17,14 @@ In this repository you'll find a number of different sample projects from AWS an
 
 ## AWS examples
 
-### Demo examples
+### Extension Demos
 
 [Demo: AWS AppConfig](awsappconfig-extension-demo/) | [Demo: Custom runtime extension](custom-runtime-extension-demo/) | [Demo: Cache Extension](cache-extension-demo/)
 :----  | :----  | :----
 A demo showing [AWS Lambda](https://aws.amazon.com/lambda/) using an extension using [AWS AppConfig](https://docs.aws.amazon.com/appconfig/latest/userguide/what-is-appconfig.html) as explained in the blog post [Introducing Lambda Extensions](https://aws.amazon.com/blogs/compute/introducing-aws-lambda-extensions-in-preview/). | A demo showing how to learn about the Extensions API as explained in the blog post [Building Extensions for AWS Lambda](https://aws.amazon.com/blogs/compute/building-extensions-for-aws-lambda-in-preview/). | The cache demo code sample is written in Go and acts as a companion process which a Lambda function can use to both data cache (using DynamoDB) and configuration cache (using Systems Manager Parameter Store).
 | [View repo](awsappconfig-extension-demo/) | [View repo](custom-runtime-extension-demo/) | [View repo](cache-extension-demo/) 
 
-### Sample extension examples by language
+### Extension examples by language
 
 [Extension in Go](go-example-extension/) |  [Extension in Python](python-example-extension/) |[Extension in Node.js](nodejs-example-extension/)
 :----  | :----  | :----
@@ -36,7 +36,7 @@ Sample: how to get a basic extension written in Go up and running. | Sample: how
 Sample: how to get a basic extension written in Java 11 up and running. | Sample: how to get a basic extension written in Python 3 up and running. | Sample: how to get a basic extension written in C# up and running.
 | [View repo](java-example-extension/) | [View repo](csharp-example-extension/)
 
-### Logs API demo and sample extension examples
+### Logs API demos and example extensions
 
 [Logs API extension in Go](go-example-logs-api-extension/) |  [Logs API extension in Python](python-example-logs-api-extension/) | [Logs API extension in Python for Elasticsearch](python-example-elasticsearch-extension/)
 :----  | :----  | :----
