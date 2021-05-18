@@ -7,60 +7,70 @@ You can use extensions to integrate your Lambda functions with your preferred mo
 
 Extensions use the Extensions API, a new HTTP interface, to register for lifecycle events and get greater control during function initialization, invocation, and shutdown. They can also use environment variables to add options and tools to the runtime, or use wrapper scripts to customize the runtime startup behavior.
 
-For more information, see [Using AWS Lambda extensions](https://docs.aws.amazon.com/lambda/latest/dg/using-extensions.html).
+For more information on using the features of Lambda extensions, see [Using AWS Lambda extensions](https://docs.aws.amazon.com/lambda/latest/dg/using-extensions.html).
 
-> **Note**: an internal extension runs in the runtime process, and shares the same lifecycle as the runtime. An external extension runs as a separate process in the execution environment. The extension runs in parallel with the function's runtime. It is initialized before the function is invoked and continues to run after the function invocation is complete
+For more information on building Lambda extensions, see [Building Extensions for AWS Lambda](https://aws.amazon.com/blogs/compute/building-extensions-for-aws-lambda-in-preview/).
 
-## Sample demos and examples
 
-In this repository you'll find a number of different sample projects from AWS and partners to help you get started with building your own extension.
+## Sample extension demos and examples
+
+In this repository you will find a number of demos and sample projects from AWS and AWS Partners to help you get started with building your own extensions.
 
 ## AWS examples
 
 ### Extension Demos
 
-[Demo: AWS AppConfig](awsappconfig-extension-demo/) | [Demo: Custom runtime extension](custom-runtime-extension-demo/) | [Demo: Cache Extension](cache-extension-demo/)
-:----  | :----  | :----
-A demo showing [AWS Lambda](https://aws.amazon.com/lambda/) using an extension using [AWS AppConfig](https://docs.aws.amazon.com/appconfig/latest/userguide/what-is-appconfig.html) as explained in the blog post [Introducing Lambda Extensions](https://aws.amazon.com/blogs/compute/introducing-aws-lambda-extensions-in-preview/). | A demo showing how to learn about the Extensions API as explained in the blog post [Building Extensions for AWS Lambda](https://aws.amazon.com/blogs/compute/building-extensions-for-aws-lambda-in-preview/). | The cache demo code sample is written in Go and acts as a companion process which a Lambda function can use to both data cache (using DynamoDB) and configuration cache (using Systems Manager Parameter Store).
-| [View repo](awsappconfig-extension-demo/) | [View repo](custom-runtime-extension-demo/) | [View repo](cache-extension-demo/) 
+* [AWS AppConfig](awsappconfig-extension-demo/): A demo showing how Lambda uses an extension with  [AWS AppConfig](https://docs.aws.amazon.com/appconfig/latest/userguide/what-is-appconfig.html) as explained in the blog post [Introducing Lambda Extensions](https://aws.amazon.com/blogs/compute/introducing-aws-lambda-extensions-in-preview/). 
+
+* [Custom runtime extension](custom-runtime-extension-demo/): A demo showing how to learn about the Extensions API as explained in the blog post [Building Extensions for AWS Lambda](https://aws.amazon.com/blogs/compute/building-extensions-for-aws-lambda-in-preview/).
+
+* [Caching Extension](cache-extension-demo/): The cache demo code sample is written in Go and acts as a companion process which a Lambda function can use as both a data cache (using DynamoDB) and configuration cache (using Systems Manager Parameter Store).
+
 
 ### Extension examples by language
 
-[Extension in Go](go-example-extension/) |  [Extension in Python](python-example-extension/) |[Extension in Node.js](nodejs-example-extension/)
-:----  | :----  | :----
-Sample: how to get a basic extension written in Go up and running. | Sample: how to get a basic extension written in Python 3 up and running. | Sample: how to get a basic extension written in Node.js 12 up and running.
-| [View repo](go-example-extension/) | [View repo](python-example-extension/) | [View repo](nodejs-example-extension/) 
+* [Go Extension](go-example-extension/): Sample: how to get a basic extension written in Go up and running.
 
-[Extension in Java 11](java-example-extension/) | [Extension in C#.NET](csharp-example-extension/)
-:----  | :---- 
-Sample: how to get a basic extension written in Java 11 up and running. | Sample: how to get a basic extension written in Python 3 up and running. | Sample: how to get a basic extension written in C# up and running.
-| [View repo](java-example-extension/) | [View repo](csharp-example-extension/)
+* [Python Extension](python-example-extension/): Sample: how to get a basic extension written in Python 3 up and running.
+
+* [Node.js Extension](nodejs-example-extension/): Sample: how to get a basic extension written in Node.js 12 up and running. 
+
+* [Java 11 Extension](java-example-extension/): Sample: how to get a basic extension written in Java 11 up and running. 
+
+* *[C#.NET Extension](csharp-example-extension/): Sample: how to get a basic extension written in C# up and running.
+
+
 
 ### Logs API demos and example extensions
 
-[Logs API extension in Go](go-example-logs-api-extension/) |  [Logs API extension in Python](python-example-logs-api-extension/) | [Logs API extension in Python for Elasticsearch](python-example-elasticsearch-extension/)
-:----  | :----  | :----
-The provided code sample demonstrates how to get a basic Logs API extension written in Go up and running. | The provided code sample demonstrates how to get a basic Logs API extension written in Python 3 up and running. | The provided code sample demonstrates how to get a basic Logs API extension for Elasticsearch written in Python 3 up and running.
-| [View repo](go-example-logs-api-extension/) | [View repo](python-example-logs-api-extension/) | [View repo](python-example-elasticsearch-extension/)
+* [Go Logs API extension](go-example-logs-api-extension/): How to get a basic Logs API extension written in Go up and running.
 
-[Logs API extension in Node.js](nodejs-example-logs-api-extension/) |  [Demo: Logs to Amazon S3 extension: zip archive](s3-logs-extension-demo-zip-archive/) | [Demo: Logs to Amazon S3 extension: container image ](s3-logs-extension-demo-container-image/)
-:----  | :----  | :----
-Sample: how to get a basic Logs API extension written in Node.js 12 up and running. | Demo to send logs directly from Lambda to S3, see the blog post [Using AWS Lambda extensions to send logs to custom destinations](https://aws.amazon.com/blogs/compute/using-aws-lambda-extensions-to-send-logs-to-custom-destinations/) | Demo to send logs directly from Lambda to S3, This example packages the extension and function as separate container images. | [View repo](s3-logs-extension-demo-zip-archive/) | [View repo](s3-logs-extension-demo-container-image/)
+* [Python Logs API extension](python-example-logs-api-extension/): How to get a basic Logs API extension written in Python 3 up and running. 
+
+* [Python for Elasticsearch Logs API extension](python-example-elasticsearch-extension/): How to get a basic Logs API extension for Elasticsearch written in Python 3 up and running.
+
+* [Node.js Logs API extension](nodejs-example-logs-api-extension/): How to get a basic Logs API extension written in Node.js 12 up and running.
+
+* [Demo: Logs to Amazon S3 extension: zip archive](s3-logs-extension-demo-zip-archive/): Demo logs extension to receive logs directly from Lambda and send them to S3, see the blog post [Using AWS Lambda extensions to send logs to custom destinations](https://aws.amazon.com/blogs/compute/using-aws-lambda-extensions-to-send-logs-to-custom-destinations/)  
+
+* [Demo: Logs to Amazon S3 extension: container image ](s3-logs-extension-demo-container-image/): Demo logs extension to receive logs directly from Lambda and send them to S3. This example packages the extension and function as separate container images.
 
 ### Other extension examples
 
-[Adaptive Batching extension in Go](go-example-adaptive-batching-extension/) | [Inter-process communication extension in Go](go-example-ipc-extension/) | [Crash uploader extension in Go](go-example-crash-uploader-extension/)
-:----  | :---- | :----
-How to use the Logs API extension written in Go to adaptively batch log data to a destination (S3). | A sample extension written in Go that acts as a companion process which the AWS Lambda function runtime can communicate with. | A sample extension that looks for core dumps in the execution environment and uploads them to an Amazon S3 bucket for later inspection and troubleshooting.
-[View repo](go-example-adaptive-batching-extension/) | [View repo](go-example-ipc-extension/) | [View repo](go-example-crash-uploader-extension/)
+* [Adaptive Batching extension in Go](go-example-adaptive-batching-extension/): How to use the Logs API extension written in Go to adaptively batch log data to a destination (S3).  
+
+* [Inter-process communication extension in Go](go-example-ipc-extension/): A sample extension written in Go that acts as a companion process which the AWS Lambda function runtime can communicate with.
+
+* [Crash uploader extension in Go](go-example-crash-uploader-extension/): A sample extension that looks for core dumps in the execution environment and uploads them to an Amazon S3 bucket for later inspection and troubleshooting.
 
 ### Wrapper script extension examples by language
-[Wrapper script in Bash](bash-example-wrapper/) | [Wrapper script in Python](python-example-wrapper/) | [Wrapper script in Ruby](ruby-example-wrapper/)
-:----  | :----  | :----
-How to to get a wrapper script written in Bash up and running. | How to to get a wrapper script written in Python up and running. | How to to get a wrapper script written in Ruby up and running.
-[View repo](bash-example-wrapper/) | [View repo](python-example-wrapper/) | [View repo](ruby-example-wrapper/)
+* [Bash Wrapper script](bash-example-wrapper/): How to to get a wrapper script written in Bash up and running.
 
-## AWS Lambda Ready Partner open-source examples
+* [Python Wrapper script](python-example-wrapper/): How to to get a wrapper script written in Python up and running.
+
+* [Ruby Wrapper script](ruby-example-wrapper/): How to to get a wrapper script written in Ruby up and running.
+
+## AWS Lambda Ready Partner examples that are open-source
 
 [![Coralogix](/img/Coralogix-Logo.png)](https://coralogix.com/integrations/coralogix-extensions-for-aws-lambda/) | [![HashiCorp Vault](/img/HashiCorpVault-Logo.png)](https://www.hashicorp.com/blog/aws-lambda-extensions-for-hashicorp-vault/) | [![Honeycomb](/img/Honeycomb-Logo.png)](https://www.honeycomb.io/blog/announcing-honeycombs-extension-for-the-aws-lambda-runtime-logs-api/)
 :----:  | :----:  | :----:
