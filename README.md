@@ -92,10 +92,10 @@ Lumigo helps identify functions that are CPU- or network-bound. This allows you 
 
 ## Additional examples that are open-source
 
-[![Open Policy Agent](/img/opa-stacked-color.png)](https://blog.openpolicyagent.org/serverless-policy-enforcement-connecting-opa-and-aws-lambda-e624f7176a3) | 1 | 1
+[![Open Policy Agent](/img/opa-stacked-color.png)](https://blog.openpolicyagent.org/serverless-policy-enforcement-connecting-opa-and-aws-lambda-e624f7176a3) | [![Open Policy Agent](/img/opa-stacked-color.png)](https://blog.openpolicyagent.org/serverless-policy-enforcement-connecting-opa-and-aws-lambda-e624f7176a3) | [![Open Policy Agent](/img/opa-stacked-color.png)](https://blog.openpolicyagent.org/serverless-policy-enforcement-connecting-opa-and-aws-lambda-e624f7176a3)
 :----:  | :----:  | :----:
-Open Policy Agent (OPA) provides policy-based control for cloud native environments. [GoDaddy](https://github.com/godaddy/opa-lambda-extension-plugin) has open-sourced an OPA plugin for Lambda which uses manual triggers to operate OPA as a Lambda Extension. | 1 | 1
-[View extension code](https://github.com/godaddy/opa-lambda-extension-plugin) | 1 | 1
+Open Policy Agent (OPA) provides policy-based control for cloud native environments. [GoDaddy](https://github.com/godaddy/opa-lambda-extension-plugin) has open-sourced an OPA plugin for Lambda which uses manual triggers to operate OPA as a Lambda Extension. | Open Policy Agent (OPA) provides policy-based control for cloud native environments. [GoDaddy](https://github.com/godaddy/opa-lambda-extension-plugin) has open-sourced an OPA plugin for Lambda which uses manual triggers to operate OPA as a Lambda Extension. | Open Policy Agent (OPA) provides policy-based control for cloud native environments. [GoDaddy](https://github.com/godaddy/opa-lambda-extension-plugin) has open-sourced an OPA plugin for Lambda which uses manual triggers to operate OPA as a Lambda Extension.
+[View extension code](https://github.com/godaddy/opa-lambda-extension-plugin) | [View extension code](https://github.com/godaddy/opa-lambda-extension-plugin) | [View extension code](https://github.com/godaddy/opa-lambda-extension-plugin)
 
 ## Additional examples that are open-source
 
