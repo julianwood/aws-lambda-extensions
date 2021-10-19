@@ -104,6 +104,11 @@ Open Policy Agent (OPA) provides policy-based control for cloud native environme
 Open Policy Agent (OPA) provides policy-based control for cloud native environments. [GoDaddy](https://github.com/godaddy/opa-lambda-extension-plugin) has open-sourced an OPA plugin for Lambda which uses manual triggers to operate OPA as a Lambda Extension.
 [View extension code](https://github.com/godaddy/opa-lambda-extension-plugin)
 
+## Additional examples that are open-source
+
+* Open Policy Agent (OPA) provides policy-based control for cloud native environments. [GoDaddy](https://github.com/godaddy/opa-lambda-extension-plugin) has open-sourced an OPA plugin for Lambda which uses manual triggers to operate OPA as a Lambda Extension.
+[View extension code](https://github.com/godaddy/opa-lambda-extension-plugin)
+
 ## Available AWS Lambda Ready Partner extensions
 * [AppDynamics](https://docs.appdynamics.com/21.5/en/application-monitoring/install-app-server-agents/serverless-apm-for-aws-lambda/use-the-appdynamics-aws-lambda-extension-to-instrument-serverless-apm-at-runtime): The AppDynamics AWS Lambda Extension provides automatic instrumentation of Node.js or Python Lambda functions to provide visibility and alerting on function performance in a broader business context
 * [Check Point CloudGuard](https://supportcenter.checkpoint.com/supportcenter/portal?eventSubmit_doGoviewsolutiondetails=&solutionid=sk172491&partition=Advanced&product=CloudGuard): Check Point CloudGuard Serverless Protection is a Lambda Layer/Extension-based runtime protection solution providing zero-configuration security for Lambda Functions.
