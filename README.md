@@ -55,6 +55,8 @@ In this repository you will find a number of demos and sample projects from AWS 
 
 * [Demo: Logs to Amazon S3 extension: container image ](s3-logs-extension-demo-container-image/): Demo logs extension to receive logs directly from Lambda and send them to S3. This example packages the extension and function as separate container images. The demo is deployed using AWS SAM.
 
+* [Demo: Logs to Kinesis firehose Logs API extension](kinesisfirehose-logs-extension-demo/): How to get a basic logs API extension for Amazon Kinesis Data Firehose written in Go. The extension explains the overall approach to streamline and centralize log collection using Amazon Kinesis Data firehose. The extension runs a local HTTP listener and subscribes to a stream of function and platform logs using the Logs API. It buffers them and sends them to Amazon Kinesis Data firehose periodically, which streams logs to Amazon S3. The demo gets deployed using AWS SAM.
+
 ### Other extension examples
 
 * [Adaptive Batching extension in Go](go-example-adaptive-batching-extension/): How to use the Logs API extension written in Go to adaptively batch log data to a destination (S3). The logs are batched up and stored by the extension. Three environment variables with default values dictate when the logs are send to the destination. If any of the conditions are met, the logs queued will be shipped to S3.
@@ -81,15 +83,27 @@ In this repository you will find a number of demos and sample projects from AWS 
 [![Coralogix](/img/Coralogix-Logo.png)](https://coralogix.com/integrations/coralogix-extensions-for-aws-lambda/) | [![HashiCorp Vault](/img/HashiCorpVault-Logo.png)](https://www.hashicorp.com/blog/aws-lambda-extensions-for-hashicorp-vault/) | [![Honeycomb](/img/Honeycomb-Logo.jpg)](https://www.honeycomb.io/blog/announcing-honeycombs-extension-for-the-aws-lambda-runtime-logs-api/)
 :----:  | :----:  | :----:
 Coralogix is a machine data analytics SaaS platform that drastically improves the delivery & maintenance process for software providers. The extension provides full integration of Lambda functions with the Coraligix service | The HashiCorp Vault extension makes it easy for operators to manage secrets and make them available for developers to use within their function code, without having to make their functions Vault aware. | The Honeycomb Lambda extension allows you to send messages from your Lambda function to Honeycomb by just writing JSON to stdout. The extension receives the messages and forwards them to Honeycomb as an event.
-[View extension](https://github.com/coralogix/aws-lambda-extension) | [View extension](https://github.com/hashicorp/vault-lambda-extension) | [View extension](https://github.com/honeycombio/honeycomb-lambda-extension)
+[View extension code](https://github.com/coralogix/aws-lambda-extension) | [View extension code](https://github.com/hashicorp/vault-lambda-extension) | [View extension code](https://github.com/honeycombio/honeycomb-lambda-extension)
 
 [![Lumigo](/img/Lumigo-Logo.jpg)](https://docs.lumigo.io/docs/lambda-extensions) | [![New Relic](/img/NewRelic-Logo.png)](https://newrelic.com/blog/nerdlog/aws-lambda-extensions-integrations) | [![Sumo Logic](/img/SumoLogic-Logo.png)](https://www.sumologic.com/blog/lambda-extensions/)
 :----:  | :----:  | :----:
 Lumigo helps identify functions that are CPU- or network-bound. This allows you to improve their performance by increasing their memory size. | An AWS Lambda extension to collect, enhance, and transport telemetry data from your AWS Lambda functions to New Relic.  | The Sumo Logic extension, along with Sumo Logic's continuous intelligence platform, enables you to get instance visibility into the health and performance of your mission-critical serverless applications.
 [View extension](https://github.com/lumigo-io/lambda-log-shipper) | [View extension](https://github.com/newrelic/newrelic-lambda-extension) | [View extension](https://github.com/SumoLogic/sumologic-lambda-extensions)
 
+## Additional examples that are open-source
+
+[![Open Policy Agent](/img/opa-stacked-color.png)](https://blog.openpolicyagent.org/serverless-policy-enforcement-connecting-opa-and-aws-lambda-e624f7176a3)
+Open Policy Agent (OPA) provides policy-based control for cloud native environments. [GoDaddy](https://github.com/godaddy/opa-lambda-extension-plugin) has open-sourced an OPA plugin for Lambda which uses manual triggers to operate OPA as a Lambda Extension.
+[View extension code](https://github.com/godaddy/opa-lambda-extension-plugin)
+
+## Additional examples that are open-source
+
+* [![Open Policy Agent](/img/opa-stacked-color.png)](https://blog.openpolicyagent.org/serverless-policy-enforcement-connecting-opa-and-aws-lambda-e624f7176a3)
+ (OPA) provides policy-based control for cloud native environments. [GoDaddy](https://github.com/godaddy/opa-lambda-extension-plugin) has open-sourced an OPA plugin for Lambda which uses manual triggers to operate OPA as a Lambda Extension.
+[View extension code](https://github.com/godaddy/opa-lambda-extension-plugin)
+
 ## Available AWS Lambda Ready Partner extensions
-* [AppDynamics](https://docs.appdynamics.com/display/PRO20X/Use+the+AppDynamics+AWS+Lambda+Extension+to+Instrument+Serverless+APM+at+Runtime): The AppDynamics AWS Lambda Extension provides automatic instrumentation of Node.js or Python Lambda functions to provide visibility and alerting on function performance in a broader business context
+* [AppDynamics](https://docs.appdynamics.com/21.5/en/application-monitoring/install-app-server-agents/serverless-apm-for-aws-lambda/use-the-appdynamics-aws-lambda-extension-to-instrument-serverless-apm-at-runtime): The AppDynamics AWS Lambda Extension provides automatic instrumentation of Node.js or Python Lambda functions to provide visibility and alerting on function performance in a broader business context
 * [Check Point CloudGuard](https://supportcenter.checkpoint.com/supportcenter/portal?eventSubmit_doGoviewsolutiondetails=&solutionid=sk172491&partition=Advanced&product=CloudGuard): Check Point CloudGuard Serverless Protection is a Lambda Layer/Extension-based runtime protection solution providing zero-configuration security for Lambda Functions.
 * [Datadog](https://docs.datadoghq.com/serverless/datadog_lambda_library/extension/): The Datadog extension brings comprehensive, real-time visibility to your serverless applications. Combined with Datadog’s existing AWS integration, you get metrics, traces, and logs to help you monitor, detect, and resolve issues at any scale.
 * [Dynatrace](https://www.dynatrace.com/support/help/technology-support/cloud-platforms/amazon-web-services/integrations/deploy-oneagent-as-lambda-extension/): The Dynatrace AWS Lambda extension delivers end-to-end visibility into traces and metrics and leverages AI for automated error detection and root cause analysis across the entire application stack.
